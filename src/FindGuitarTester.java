@@ -7,8 +7,8 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        Guitar orden1 = new Guitar("", Builder.FENDER.toString(), "Stratocastor",
-                Type.ELECTRIC.toString(), Wood.ALDER.toString(),Wood.ALDER.toString(),0);
+        Guitar orden1 = new Guitar("", Builder.FENDER, "Stratocastor",
+                Type.ELECTRIC, Wood.ALDER, Wood.ALDER,0);
         Guitar guitar = inventory.search(orden1);
         if(guitar!=null){
             System.out.println("Dear customer, you would like this " +

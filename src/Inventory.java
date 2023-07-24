@@ -1,3 +1,7 @@
+import enums.Builder;
+import enums.Type;
+import enums.Wood;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,7 +13,7 @@ public class Inventory {
         guitars = new ArrayList<>();
     }
     //adding objects to the list
-    public void addGuittar(String serialNumber,String builder, String model, String type, String backWood, String topWood,
+    public void addGuittar(String serialNumber, Builder builder, String model, Type type, Wood backWood, Wood topWood,
                            double price){
         Guitar guitar = new Guitar(serialNumber, builder, model, type, backWood, topWood, price);
         guitars.add(guitar);
@@ -27,26 +31,27 @@ public class Inventory {
     public Guitar search(Guitar searchGuitar){
         for(Guitar guitar:guitars){
             //ignora serialnumber y price porque son unicos
-            String builder = searchGuitar.getBuilder();
-            String model = searchGuitar.getModel();
-            String type = searchGuitar.getType();
-            String backWood = searchGuitar.getBackWood();
-            String topWood = searchGuitar.getTopWood();
-            if (builder != null && !builder.equals("") && guitar.getBuilder().equals(builder)){
+            Builder builder = searchGuitar.getBuilder();
+            String model = searchGuitar.getModel().toLowerCase();
+            Type type = searchGuitar.getType();
+            Wood backWood = searchGuitar.getBackWood();
+            Wood topWood = searchGuitar.getTopWood();
+            if (!guitar.getBuilder().equals(builder)){
                 continue;
             }
-            if (model != null && !model.equals("") && guitar.getModel().equals(model)){
+            if ((model != null) && (!model.equals("")) && (!model.equals(guitar.getModel().toLowerCase()))){
                 continue;
             }
-            if (type != null && !type.equals("") && guitar.getType().equals(type)){
+            if (!guitar.getType().equals(type)){
                 continue;
             }
-            if (backWood != null && !backWood.equals("") && guitar.getBackWood().equals(backWood)){
+            if (!guitar.getBackWood().equals(backWood)){
                 continue;
             }
-            if (topWood != null && !topWood.equals("") && guitar.getTopWood().equals(topWood)){
+            if (!guitar.getTopWood().equals(topWood)){
                 continue;
             }
+            return guitar;
         }
         return null;
     }
