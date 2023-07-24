@@ -1,11 +1,15 @@
+import enums.Builder;
+import enums.Type;
+import enums.Wood;
+
 public class FindGuitarTester {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        Guitar searchTest = new Guitar("", "fender", "Stratocastor", "electric", "Alder",
-                                        "Alder",0);
-        Guitar guitar = inventory.search(searchTest);
+        Guitar orden1 = new Guitar("", Builder.FENDER.toString(), "Stratocastor",
+                Type.ELECTRIC.toString(), Wood.ALDER.toString(),Wood.ALDER.toString(),0);
+        Guitar guitar = inventory.search(orden1);
         if(guitar!=null){
             System.out.println("Dear customer, you would like this " +
                     guitar.getBuilder() + "" + guitar.getModel() + "" +
