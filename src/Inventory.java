@@ -35,6 +35,9 @@ public class Inventory {
             if (builder != null && !builder.equals("") && guitar.getBuilder().equals(builder)){
                 continue;
             }
+            if (model != null && !model.equals("") && guitar.getModel().equals(model)){
+                continue;
+            }
             if (type != null && !type.equals("") && guitar.getType().equals(type)){
                 continue;
             }
