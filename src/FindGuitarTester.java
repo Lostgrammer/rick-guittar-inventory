@@ -17,4 +17,9 @@ public class FindGuitarTester {
             System.out.println("Sorry dear customer, we don't have nothing for you.");
         }
     }
+
+    private static void initializeInventory(Inventory inventory){
+        inventory.addGuittar("V95693","Fender","Stratocastor","electric","Alder","Alder",
+        1499.95);
+    }
 }
