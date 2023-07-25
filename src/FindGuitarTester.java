@@ -23,7 +23,7 @@ public class FindGuitarTester {
     }
 
     private static void initializeInventory(Inventory inventory){
-        inventory.addGuittar("V95693","Fender","Stratocastor","electric","Alder","Alder",
+        inventory.addGuittar("V95693",Builder.FENDER,"Stratocastor",Type.ELECTRIC,Wood.ALDER,Wood.ALDER,
         1499.95);
     }
 }
