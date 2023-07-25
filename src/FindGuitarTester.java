@@ -15,17 +15,17 @@ public class FindGuitarTester {
         List<Guitar> resultGuitars;//iniciamos una variable de una lista de objetos
         resultGuitars = inventory.search(order1); //esta variable almacena lista de objetos que es el resultado de aplicar el metodo search al inventario con un objeto como argumento
 
-        System.out.println("Dear customer, you would like these guitars: ");
-        for (Guitar guitar:resultGuitars){
-            if(guitar!=null){
+        if(resultGuitars.size()>0){
+            System.out.println("Dear customer, you would like these guitars: ");
+            for (Guitar guitar:resultGuitars){
                 System.out.println("We have a "+guitar.getBuilder() + " " + guitar.getModel() + " " +
                 guitar.getType() + " guitar:\n  " +
                 guitar.getBackWood() + " back and sides,\n  "+
                 guitar.getTopWood()+ " top.\nYou can have it for only $"+
                 guitar.getPrice()+"!\n ----");
-            }else {
-                System.out.println("Sorry dear customer, we don't have nothing for you.");
             }
+        }else {
+            System.out.println("Sorry dear customer, we don't have nothing for you.");
         }
     }
 
