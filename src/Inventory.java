@@ -9,9 +9,9 @@ public class Inventory {
     private List<Guitar> guitars;
 
     public Inventory(){
-        guitars = new ArrayList<>();
+        guitars = new ArrayList<>(); //iniciamos una lista de objetos guitarra
     }
-    //adding objects to the list
+    //adding objects to the guitar list
     public void addGuitar(String serialNumber, Builder builder, String model, Type type, Wood backWood, Wood topWood,
                            double price){
         Guitar guitar = new Guitar(serialNumber, builder, model, type, backWood, topWood, price);
@@ -29,9 +29,9 @@ public class Inventory {
 
     public List<Guitar> search(Guitar searchGuitar){
         List<Guitar> guitarResult = new ArrayList<>();
-        for(Guitar guitar:guitars){
+        for(Guitar guitar:guitars){//pasamos por todas las guitarras dentro de la lista guitar
             //ignora serialnumber y price porque son unicos
-            Builder builder = searchGuitar.getBuilder();
+            Builder builder = searchGuitar.getBuilder(); //compara todos los elementos(enumeradores y variables) de la lista guitarra con el objeto searchGuitar
             String model = searchGuitar.getModel().toLowerCase();
             Type type = searchGuitar.getType();
             Wood backWood = searchGuitar.getBackWood();
