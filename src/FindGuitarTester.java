@@ -14,14 +14,15 @@ public class FindGuitarTester {
                 Type.ELECTRIC, Wood.ALDER, Wood.ALDER,0);
         List<Guitar> resultGuitars;//iniciamos una lista de objetos
         resultGuitars = inventory.search(order1); //esta lista almacena lista de objetos que se le aplica metodo search
+
+        System.out.println("Dear customer, you would like these guitars: ");
         for (Guitar guitar:resultGuitars){
             if(guitar!=null){
-                System.out.println("Dear customer, you would like this " +
-                        guitar.getBuilder() + "" + guitar.getModel() + "" +
-                        guitar.getType() + " guitar:\n  " +
-                        guitar.getBackWood() + " back and sides,\n  "+
-                        guitar.getTopWood()+ " top.\nYou can have it for only $"+
-                        guitar.getPrice()+"!");
+                System.out.println("We have a "+guitar.getBuilder() + " " + guitar.getModel() + " " +
+                guitar.getType() + " guitar:\n  " +
+                guitar.getBackWood() + " back and sides,\n  "+
+                guitar.getTopWood()+ " top.\nYou can have it for only $"+
+                guitar.getPrice()+"!\n ----");
             }else {
                 System.out.println("Sorry dear customer, we don't have nothing for you.");
             }
@@ -31,5 +32,7 @@ public class FindGuitarTester {
     private static void initializeInventory(Inventory inventory){
         inventory.addGuitar("V95693",Builder.FENDER,"Stratocastor",Type.ELECTRIC,Wood.ALDER,Wood.ALDER,
         1499.95);
+        inventory.addGuitar("V9512",Builder.FENDER,"Stratocastor",Type.ELECTRIC,Wood.ALDER,Wood.ALDER,
+                1499.95);
     }
 }
