@@ -27,7 +27,8 @@ public class Inventory {
         return null;
     }
 
-    public Guitar search(Guitar searchGuitar){
+    public List<Guitar> search(Guitar searchGuitar){
+        List<Guitar> guitarResult = new ArrayList<>();
         for(Guitar guitar:guitars){
             //ignora serialnumber y price porque son unicos
             Builder builder = searchGuitar.getBuilder();
@@ -50,8 +51,8 @@ public class Inventory {
             if (!guitar.getTopWood().equals(topWood)){
                 continue;
             }
-            return guitar;
+            guitarResult.add(guitar);
         }
-        return null;
+        return guitarResult;
     }
 }
