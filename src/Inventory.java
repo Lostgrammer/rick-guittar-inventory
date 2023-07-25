@@ -3,7 +3,6 @@ import enums.Type;
 import enums.Wood;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Inventory {
@@ -13,13 +12,13 @@ public class Inventory {
         guitars = new ArrayList<>();
     }
     //adding objects to the list
-    public void addGuittar(String serialNumber, Builder builder, String model, Type type, Wood backWood, Wood topWood,
+    public void addGuitar(String serialNumber, Builder builder, String model, Type type, Wood backWood, Wood topWood,
                            double price){
         Guitar guitar = new Guitar(serialNumber, builder, model, type, backWood, topWood, price);
         guitars.add(guitar);
     }
 
-    public Guitar getGuittar(String serialNumber){
+    public Guitar getGuitar(String serialNumber){
         for(Guitar guitar:guitars){
             if (guitar.getSerialNumber().equals(serialNumber)){
                 return guitar;
