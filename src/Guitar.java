@@ -3,9 +3,9 @@ import enums.Type;
 import enums.Wood;
 
 public class Guitar {
-    private String serialNumber, model;
+    private String serialNumber, model; //no son tipo enum porque no son valores que se limitan a un numero fijo de opciones
     private double price;
-    private Builder builder;
+    private Builder builder; //Builder: tipo de dato / builder:nombre de la variable
     private Type type;
     private Wood backWood;
     private Wood topWood;
