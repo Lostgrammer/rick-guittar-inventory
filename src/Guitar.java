@@ -3,22 +3,14 @@ import enums.Type;
 import enums.Wood;
 
 public class Guitar {
-    private String serialNumber, model; //no son tipo enum porque no son valores que se limitan a un numero fijo de opciones
+    private String serialNumber; //no son tipo enum porque no son valores que se limitan a un numero fijo de opciones
     private double price;
-    private Builder builder; //Builder: tipo de dato / builder:nombre de la variable
-    private Type type;
-    private Wood backWood;
-    private Wood topWood;
+    private GuitarSpec spec;
 
-    public Guitar(String serialNumber, Builder builder, String model, Type type, Wood backWood, Wood topWood,
-                  double price){
+    public Guitar(String serialNumber, Builder builder, String model,Type type, Wood backWood, Wood topWood, double price){
         this.serialNumber = serialNumber;
-        this.builder = builder;
-        this.model = model;
-        this.type = type;
-        this.backWood = backWood;
-        this.topWood = topWood;
         this.price = price;
+        this.spec = new GuitarSpec(model,builder, type, backWood, topWood);//declarando el objeto spec
     }
 
     public double getPrice() {
@@ -33,23 +25,7 @@ public class Guitar {
         return serialNumber;
     }
 
-    public Builder getBuilder() {
-        return builder;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public Wood getBackWood() {
-        return backWood;
-    }
-
-    public Wood getTopWood() {
-        return topWood;
+    public GuitarSpec getSpec() {
+        return spec;
     }
 }
