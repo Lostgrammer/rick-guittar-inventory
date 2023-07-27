@@ -43,8 +43,23 @@ public class GuitarSpec {
         return numStrings;
     }
 
-//    //add matches method
-//    public boolean matches(GuitarSpec otherSpec){
-//
-//    }
+    //add matches method
+    public boolean matches(GuitarSpec otherSpec){
+        if (!otherSpec.builder.equals(builder)){
+            return false;
+        }
+        if ((model != null) && (!model.equals("")) && (!model.equals(otherSpec.model))){
+            return false;
+        }
+        if (!otherSpec.type.equals(type)){
+            return false;
+        }
+        if (!otherSpec.backWood.equals(backWood)){
+            return false;
+        }
+        if (!otherSpec.topWood.equals(topWood)){
+            return false;
+        }
+        return true;
+    }
 }
