@@ -8,13 +8,15 @@ public class GuitarSpec {
     private Type type;
     private Wood backWood;
     private Wood topWood;
+    private int numStrings; //nuevo atributo
 
-    public GuitarSpec(String model, Builder builder,Type type, Wood backWood, Wood topWood){
+    public GuitarSpec(String model, Builder builder,Type type, Wood backWood, Wood topWood, int numStrings){
         this.model = model;
         this.builder = builder;
         this.type = type;
         this.backWood = backWood;
         this.topWood = topWood;
+        this.numStrings = numStrings;
     }
 
     public String getModel() {
@@ -37,4 +39,12 @@ public class GuitarSpec {
         return topWood;
     }
 
+    public int getNumStrings() {
+        return numStrings;
+    }
+
+//    //add matches method
+//    public boolean matches(GuitarSpec otherSpec){
+//
+//    }
 }
