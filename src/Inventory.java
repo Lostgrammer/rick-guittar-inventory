@@ -12,9 +12,9 @@ public class Inventory {
         guitars = new ArrayList<>(); //iniciamos una lista de objetos guitarra
     }
     //adding objects to the guitar list
-    public void addGuitar(String serialNumber, Builder builder, String model , Type type, Wood backWood, Wood topWood,
-                          double price){
-        Guitar guitar = new Guitar(serialNumber, builder, model , type, backWood, topWood, price);
+    public void addGuitar(String serialNumber,
+                          double price, GuitarSpec spec){
+        Guitar guitar = new Guitar(serialNumber, price, spec);
         guitars.add(guitar);
     }
 
