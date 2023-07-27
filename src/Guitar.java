@@ -7,10 +7,10 @@ public class Guitar {
     private double price;
     private GuitarSpec spec;
 
-    public Guitar(String serialNumber, Builder builder, String model,Type type, Wood backWood, Wood topWood, double price){
+    public Guitar(String serialNumber, double price, GuitarSpec spec){
         this.serialNumber = serialNumber;
         this.price = price;
-        this.spec = new GuitarSpec(model,builder, type, backWood, topWood);//declarando el objeto spec
+        this.spec = spec;//declarando el objeto spec
     }
 
     public double getPrice() {
