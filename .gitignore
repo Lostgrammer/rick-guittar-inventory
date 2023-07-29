@@ -155,5 +155,6 @@ fabric.properties
 hs_err_pid*
 replay_pid*
 .idea/
+head-first-ooad-rick-guittar-inventary.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,git
